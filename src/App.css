@@ -1,0 +1,184 @@
+body {
+  height: 100vh;
+  overflow-x: hidden;
+}
+#root {
+  height: 100vh;
+  background: linear-gradient(135deg, #4ca5ff 0%, #48d2a0 45%, #eafa5a 100%);
+  padding: 80px 0;
+}
+
+#left-col-title {
+  font-size: 100px;
+  font-weight: 900;
+  color: white;
+  line-height: 120px;
+}
+
+#welcome-card {
+  height: 75%;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  h1 {
+    font-size: 60px;
+  }
+  button {
+    padding: 20px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.25);
+    color: black;
+    font-weight: 500;
+    font-size: 15px;
+  }
+}
+
+.card {
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+}
+
+.card-title {
+  font-size: 80px;
+}
+
+.card-text {
+  font-size: 30px;
+}
+
+.torna {
+  font-size: 30px;
+}
+
+.container-fluid {
+  backdrop-filter: blur(0px);
+}
+
+.glass-card {
+  max-width: 450px;
+  padding: 40px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  button {
+    padding: 10px 30px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.25);
+}
+
+.hero-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.modern-input {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.modern-input:focus {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 3px rgba(76, 165, 255, 0.4);
+}
+
+label {
+  font-weight: 600;
+  color: white;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.torna {
+  margin-top: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.torna:hover {
+  color: #dfdfdf;
+}
+
+.card-text {
+  color: white;
+  font-weight: 300;
+  text-align: center;
+}
+
+.weather-card {
+  padding: 35px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  color: black;
+}
+
+.weather-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weather-header h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.weather-temp {
+  font-size: 4.5rem;
+  font-weight: 900;
+  margin: 20px 0 10px 0;
+}
+
+.weather-desc {
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  text-transform: capitalize;
+}
+
+.weather-info {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.1rem;
+  margin-top: 15px;
+}
+
+.weather-info div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
