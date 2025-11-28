@@ -67,14 +67,17 @@ const Forecast = () => {
           <div className="card h-100 ">
             <div className="card-body">
               {forecast.list &&
-                days.map((i) => {
+                days.map((i, index) => {
                   const d = forecast.list[i];
                   const iconURL = `https://openweathermap.org/img/wn/${d.weather[0].icon}@2x.png`;
 
                   return (
                     <div className="weather-card" key={i++}>
                       <div className="weather-header">
-                        <h2>{forecast.city.name}</h2>
+                        <h2>
+                          {forecast.city.name} Fra {index + 1}
+                          {index + 1 > 1 ? " giorni" : " giorno"}
+                        </h2>
                         <img src={iconURL} />
                       </div>
 
