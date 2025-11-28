@@ -67,16 +67,27 @@ const Forecast = () => {
           <div className="card h-100 ">
             <div className="card-body">
               {forecast.list &&
-                days.map((i, index) => {
+                days.map((i) => {
                   const d = forecast.list[i];
                   const iconURL = `https://openweathermap.org/img/wn/${d.weather[0].icon}@2x.png`;
-
+                  const date = new Date(d.dt_txt);
+                  const day = date.getDay();
+                  const data = date.getDate();
+                  const giorni = [
+                    "Domenica",
+                    "Lunedi",
+                    "Martedi",
+                    "Mercoledi",
+                    "Giovedi",
+                    "Venerdi",
+                    "Sabato",
+                  ];
                   return (
                     <div className="weather-card" key={i++}>
                       <div className="weather-header">
+                        <h2>{forecast.city.name}</h2>
                         <h2>
-                          {forecast.city.name} Fra {index + 1}
-                          {index + 1 > 1 ? " giorni" : " giorno"}
+                          {giorni[day]} {data}
                         </h2>
                         <img src={iconURL} />
                       </div>
