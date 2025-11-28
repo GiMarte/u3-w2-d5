@@ -71,7 +71,7 @@ const Forecast = () => {
                   const d = forecast.list[i];
                   const iconURL = `https://openweathermap.org/img/wn/${d.weather[0].icon}@2x.png`;
                   const date = new Date(d.dt_txt);
-                  const day = date.getDay();
+                  const currentDay = date.getDay();
                   const data = date.getDate();
                   const giorni = [
                     "Domenica",
@@ -87,7 +87,7 @@ const Forecast = () => {
                       <div className="weather-header">
                         <h2>{forecast.city.name}</h2>
                         <h3>
-                          {giorni[day]} {data}
+                          {giorni[currentDay]} {data}
                         </h3>
                         <img src={iconURL} />
                       </div>

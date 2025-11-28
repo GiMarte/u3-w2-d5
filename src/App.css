@@ -2,6 +2,15 @@ body {
   height: 100vh;
   overflow-x: hidden;
 }
+a {
+  color: rgb(67, 133, 255);
+  padding: 10px 20px;
+  border-radius: 30px;
+}
+a:hover {
+  background-color: #ffffff3a;
+  color: black;
+}
 #root {
   height: 100vh;
   background: linear-gradient(135deg, #4ca5ff 0%, #48d2a0 45%, #eafa5a 100%);
