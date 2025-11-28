@@ -83,12 +83,12 @@ const Forecast = () => {
                     "Sabato",
                   ];
                   return (
-                    <div className="weather-card" key={i++}>
+                    <div className="weather-card" key={i}>
                       <div className="weather-header">
                         <h2>{forecast.city.name}</h2>
-                        <h2>
+                        <h3>
                           {giorni[day]} {data}
-                        </h2>
+                        </h3>
                         <img src={iconURL} />
                       </div>
 
