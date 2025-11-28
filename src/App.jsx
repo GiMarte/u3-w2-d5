@@ -4,6 +4,7 @@ import "./App.css";
 import Hero from "./components/Hero";
 import Meteo from "./components/Meteo";
 import Error from "./components/Error";
+import Forecast from "./components/Forecast";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/meteo" element={<Meteo />} />
+        <Route path="/meteo-pro" element={<Forecast />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>

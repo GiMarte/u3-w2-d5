@@ -26,15 +26,15 @@ const Hero = () => {
                 {" "}
                 <h1>Previsioni dove vuoi tu!</h1>
               </Card.Title>
-              <Card.Text className="text-dark">
-                <p className="fs-3">
+              <div className="text-dark">
+                <div className="fs-3">
                   I comuni italiani: Strangolagalli, Paperino, Occhiobello,
-                  Gatta, Inferno compresi! <br /> Cerca il comune piu' apprezzato
+                  Gatta,Inferno compresi! <br /> Cerca il comune piu' apprezzato
                   dai nostri utenti: <br />{" "}
-                  <span className="fw-bold">Batman</span>, ufficialmente dalla
+                  <span className="fw-bold">Batman </span>, ufficialmente dalla
                   turchia(TR)👀
-                </p>
-              </Card.Text>
+                </div>
+              </div>
               <Button
                 onClick={() => {
                   navigate("/meteo");

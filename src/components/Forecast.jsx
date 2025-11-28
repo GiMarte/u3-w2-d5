@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Meteo = () => {
+const Forecast = () => {
   const [city, setCity] = useState("Milan");
   const [intCode, setIntCode] = useState("IT"); //codice nazionale
-  const [type, setType] = useState("weather"); //weather or forecast
-  const [meteo, setMeteo] = useState({});
+  const [type, setType] = useState("forecast"); //weather or forecast
+  const [forecast, setForecast] = useState({});
 
   const getData = async () => {
     const URL = `https://api.openweathermap.org/data/2.5/${type}?q=${city},${intCode}&appid=20d953af10a803887ab8b64e07a4293f&units=metric`;
@@ -19,23 +19,21 @@ const Meteo = () => {
         );
       const result = await response.json();
       console.log(result);
-      setMeteo(result);
+      setForecast(result);
     } catch (error) {
       console.log(error);
     }
   };
-
-  const iconURL = meteo.weather
-    ? `https://openweathermap.org/img/wn/${meteo.weather[0].icon}@2x.png`
-    : "";
-
+  const days = [8, 16, 24, 32, 39];
   return (
     <div className="container-fluid h-100">
       <div className="row h-100">
         <div className="col col-12 col-md-5 d-flex justify-content-center">
           <div className="card glass-card">
-            <div className="card-body d-flex flex-column justify-content-center gap-2 align-items-center">
-              <h5 className="card-title hero-title">Trova il tempo!</h5>
+            <div className="card-body d-flex flex-column gap-2 align-items-center">
+              <h5 className="card-title hero-title">
+                Trova il tempo! (del futuro)
+              </h5>
               <div className="card-text text-center">
                 <label htmlFor="citta">Citta'?</label>
                 <input
@@ -61,31 +59,36 @@ const Meteo = () => {
               </Link>
             </div>
             <div>
-              <Link to="/meteo-pro">Oppure vuoi vedere il futuro?</Link>
+              <Link to="/meteo">Oppure vuoi tornare al presente?</Link>
             </div>
           </div>
         </div>
         <div className="col col-12 col-md-7">
           <div className="card h-100 ">
             <div className="card-body">
-              {meteo.main && (
-                <div className="weather-card d-flex justify-content-center align-items-center h-100 flex-column gap-3">
-                  <div className="weather-header">
-                    <h2>{meteo.name}</h2>
-                    <img src={iconURL} />
-                  </div>
+              {forecast.list &&
+                days.map((i) => {
+                  const d = forecast.list[i];
+                  const iconURL = `https://openweathermap.org/img/wn/${d.weather[0].icon}@2x.png`;
 
-                  <div className="weather-temp">{meteo.main.temp}°C</div>
-                  <div className="weather-desc">
-                    {meteo.weather[0].description}
-                  </div>
+                  return (
+                    <div className="weather-card" key={i++}>
+                      <div className="weather-header">
+                        <h2>{forecast.city.name}</h2>
+                        <img src={iconURL} />
+                      </div>
 
-                  <div className="weather-info">
-                    <div>💧 Umidità: {meteo.main.humidity}%</div>
-                    <div>💨 Vento: {meteo.wind.speed} m/s</div>
-                  </div>
-                </div>
-              )}
+                      <div className="weather-temp">{d.main.temp}°C</div>
+                      <div className="weather-desc">
+                        {d.weather[0].description}
+                      </div>
+                      <div className="weather-info">
+                        <div>💧 {d.main.humidity}%</div>
+                        <div>💨 {d.wind.speed} m/s</div>
+                      </div>
+                    </div>
+                  );
+                })}
             </div>
           </div>
         </div>
@@ -94,4 +97,4 @@ const Meteo = () => {
   );
 };
 
-export default Meteo;
+export default Forecast;
