@@ -18,10 +18,17 @@ body {
 #welcome-card {
   height: 75%;
   border-radius: 50px;
-  background: rgba(255, 255, 255, 0.2);
   border: none;
+  padding: 40px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   h1 {
     font-size: 60px;
+    font-weight: 800;
   }
   button {
     padding: 20px;

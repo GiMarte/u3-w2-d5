@@ -20,15 +20,20 @@ const Hero = () => {
           xs={12}
           xl={7}
           className="h-100 p-0 m-0 d-flex flex-column justify-content-center">
-          <Card id="welcome-card ">
+          <Card id="welcome-card">
             <Card.Body className="d-flex flex-column justify-content-center gap-5 align-items-center">
               <Card.Title>
                 {" "}
                 <h1>Previsioni dove vuoi tu!</h1>
               </Card.Title>
               <Card.Text className="text-dark">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                <p className="fs-3">
+                  I comuni italiani: Strangolagalli, Paperino, Occhiobello,
+                  Gatta, Inferno compresi! <br /> Cerca il comune piu' apprezzato
+                  dai nostri utenti: <br />{" "}
+                  <span className="fw-bold">Batman</span>, ufficialmente dalla
+                  turchia(TR)👀
+                </p>
               </Card.Text>
               <Button
                 onClick={() => {

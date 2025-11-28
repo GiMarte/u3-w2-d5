@@ -1,4 +1,3 @@
-import { Card, Container, Col, Row } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 const Meteo = () => {
